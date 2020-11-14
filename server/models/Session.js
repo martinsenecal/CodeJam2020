@@ -1,6 +1,8 @@
 /**
  * id; mongo id
  * matched; boolean
+ * lat
+ * lng
  * locationRadius; int
  * price; // number of $$$
  * MatchedRestaurant
