@@ -15,7 +15,7 @@ const SessionSchema = new mongoose.Schema({
   price: { type: Number },
   matchedRestaurant: { Boolean },
   users: {}, //where each users will have a list of accepted & declined restaurants
-  restaurants: {}, //containing all metadata to keep
+  restaurants: { type: String }, //containing all restaurants place_ID with a "Yes"
 });
 
 module.exports = Session = mongoose.model('session', SessionSchema);
