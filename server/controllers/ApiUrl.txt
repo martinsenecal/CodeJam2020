@@ -12,7 +12,8 @@ location=${LATITUDE},${LONGITUDE}
 ---------------------------------------------------------------
 Place Details API:
 *We need place_id from place search api
+
 https://maps.googleapis.com/maps/api/place/details/json?
-key=${YOUR_API_KEY}
-&place_id=${PLACE_ID}
+place_id=${PLACE_ID}
 &fields=vicinity,name,photo,place_id,url,formatted_phone_number,opening_hours,website,price_level,rating,review,user_ratings_total
+&key=${YOUR_API_KEY}
