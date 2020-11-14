@@ -14,16 +14,16 @@ const placesRouter = express.Router();
 // @route    Get api/session
 // @desc     Get details of a restaurant
 // @access   Public
-placesRouter.get('/', getPlaceDetails);
+placesRouter.get('/getDetailsRestaurant/:id', getPlaceDetails);
 
 // @route    Get api/session
 // @desc     Get list of restaurants
 // @access   Public
-placesRouter.get('/', getPlaces);
+placesRouter.get('/getListRestaurant', getPlaces);
 
 // @route    Get api/session
 // @desc     Get Picture of Maps
 // @access   Public
-placesRouter.get('/', getPlacePicture);
+placesRouter.get('/getPictureMaps/:id', getPlacePicture);
 
 module.exports = placesRouter;
