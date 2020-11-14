@@ -4,8 +4,10 @@
   "description": "Hackathon Project for CodeJam2020",
   "main": "server",
   "scripts": {
-    "server": "cross-env NODE_ENV=production node server/server.js",
-    "dev": "cross-env NODE_ENV=development nodemon server/server.js"
+    "prod": "cross-env NODE_ENV=production node server/server.js",
+    "server": "cross-env NODE_ENV=development nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Martin",
   "license": "MIT",
