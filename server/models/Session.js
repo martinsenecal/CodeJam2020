@@ -1,15 +1,21 @@
 const mongoose = require('mongoose');
 
-/**
- * id; mongo id
- * matched; boolean
- * lat
- * lng
- * locationRadius; int
- * price; // number of $$$
- * MatchedRestaurant
- * [users] --> mongo id
- *  [accepted restaurants]
- *  [declined restaurants]   //  accepted restaurants
- * [restaurants] // Restaurant.js to show to people
- */
+//Fields for Session (Game Room)
+
+const SessionSchema = new mongoose.Schema({
+  id: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
+  isMatched: {
+    type: Boolean,
+  },
+  latitude: {},
+  longitude: {},
+  locationRadius: {},
+  price: { type: Number },
+  matchedRestaurant: { Boolean },
+  users: {}, //where each users will have a list of accepted & declined restaurants
+  restaurants: {}, //containing all metadata to keep
+});
+
+module.exports = Session = mongoose.model('session', SessionSchema);

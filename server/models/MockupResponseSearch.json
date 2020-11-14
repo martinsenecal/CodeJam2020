@@ -1,0 +1,107 @@
+{
+    "html_attributions": [],
+    "next_page_token": "ATtYBwJH6l9Y6qR3OHeS6hcHy48_j3Nd1eb4ZduQWlEy2Go42b9xpwkMfARFs9Q3Lp-ZJVb0xCHpoFY7gjV20fufB4Oj3RIrHOAYCOLJxcqbQ_Gu8riKsl733OyxxckFEpFOpr1ZTBBpyDfY_gfCrLhbiKe3mA8M4vCQPQbTp6cxu1WqtAWp3bDyaWZkPGRex1Jr7degkBkrW_la16HPCtwWUjFTLLFk-1g1myHhzSYexm2LNVkYw_ZQj5TouC0-tFT08u8-iBES9f0VjKapIxWku7oTh06LxBKGK7Rrs_MZ_rBHTzh5dJ_Y9VeMy3YOiX7GI5k2FqNMb8tEp26kJXWOZhB5h80v90_o52lqX0lO4ngL1GAsoBUQyH36dIQbPepYmLoGFTF7YZ-d5ZNYJpIV1IN3BrLcFfo",
+    "results": [
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "1506 Chemin d'Oka, Deux-Montagnes, QC J7R 1M8, Canada",
+            "geometry": {
+                "location": {
+                    "lat": 45.5367978,
+                    "lng": -73.8981158
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.53821707989272,
+                        "lng": -73.89683997010727
+                    },
+                    "southwest": {
+                        "lat": 45.53551742010728,
+                        "lng": -73.89953962989271
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "name": "Restaurant Les Petits Fils d'Alice",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 2988,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108205705898207892138\">Valou Bessette</a>"
+                    ],
+                    "photo_reference": "ATtYBwKeuetPkiSY_1PWy07qm6KwyIePe8wJntEe4Z6YKgGM96GG-QjO9rwLf0BMtm3DwvPH7vmKIQDTtCOv04DrjRCS1NS_nun34f7CYh-_AmcNDQB4sMmpZiFIDILk3YsBH8GiC_pzsbsuU-V_Wobdkz0feLyILwcBJCoTk08HRYd4vfO1",
+                    "width": 5312
+                }
+            ],
+            "place_id": "ChIJmxkbtFslyUwRNbbdFzbGXc0",
+            "plus_code": {
+                "compound_code": "G4P2+PQ Deux-Montagnes, Quebec",
+                "global_code": "87Q8G4P2+PQ"
+            },
+            "price_level": 2,
+            "rating": 4.6,
+            "reference": "ChIJmxkbtFslyUwRNbbdFzbGXc0",
+            "types": [
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 94
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "1405 Chemin d'Oka, Deux-Montagnes, QC J7R 1M5, Canada",
+            "geometry": {
+                "location": {
+                    "lat": 45.5377648,
+                    "lng": -73.89705619999999
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 45.53905837989272,
+                        "lng": -73.89566077010727
+                    },
+                    "southwest": {
+                        "lat": 45.53635872010728,
+                        "lng": -73.89836042989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+            "name": "L'Oeufrier (Deux-Montagnes)",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 412,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/111456018124080158929\">L&#39;Oeufrier Deux-Montagnes</a>"
+                    ],
+                    "photo_reference": "ATtYBwIbmaZiqTDKF_IBvBzME8hCdVerKAZHtgwDl-jNytxLjITAyjqAboAu26_UTAsO81379QtI75D2HmpdMczUZ_JDusWj6O1vt91jPCZowP-B8VzOVvbuqaI2ZCtPIVgi2ltWYt8O4_ujittkiXpXRrZkyqhiUB0uEsVHpaLBaHp_cahX",
+                    "width": 550
+                }
+            ],
+            "place_id": "ChIJp4FOu1slyUwRUo8WHsiK5_g",
+            "plus_code": {
+                "compound_code": "G4Q3+45 Deux-Montagnes, Quebec",
+                "global_code": "87Q8G4Q3+45"
+            },
+            "price_level": 2,
+            "rating": 4.4,
+            "reference": "ChIJp4FOu1slyUwRUo8WHsiK5_g",
+            "types": [
+                "restaurant",
+                "food",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 403
+        }
+    ],
+    "status": "OK"
+}
