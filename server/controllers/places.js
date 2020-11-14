@@ -90,11 +90,10 @@ const getPlaceDetails = async (req, res, next) => {
         url: restoMainData.url,
         vicinity: restoMainData.vicinity,
         phone_number: restoMainData.formatted_phone_number,
-        });
+      });
 
-        const restoDetails = await restoDetails.save();
+      const restoDetails = await restoDetails.save();
       
-
       res.json(parsedJSON); 
     });
   } catch (err) {

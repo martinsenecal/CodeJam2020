@@ -17,3 +17,11 @@ https://maps.googleapis.com/maps/api/place/details/json?
 place_id=${PLACE_ID}
 &fields=vicinity,name,photo,place_id,url,formatted_phone_number,opening_hours,website,price_level,rating,review,user_ratings_total
 &key=${YOUR_API_KEY}
+
+---------------------------------------------------------------
+Place Photos API:
+
+https://maps.googleapis.com/maps/api/place/photo?
+maxwidth=${MAX_WIDTH}
+&photoreference=${PHOTO_REFERENCE}
+&key=${YOUR_API_KEY}
