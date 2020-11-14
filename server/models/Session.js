@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 /**
  * id; mongo id
  * matched; boolean
