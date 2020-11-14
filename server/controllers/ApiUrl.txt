@@ -1,0 +1,18 @@
+Place Search API:
+
+https://maps.googleapis.com/maps/api/place/textsearch/json?
+location=${LATITUDE},${LONGITUDE}
+&radius=${RADIUS_IN_METERS}
+&type=restaurant
+&keyword=${FOOD_TYPE}
+&maxprice=${MAXPRICE}
+&key=${YOUR_API_KEY}
+
+
+---------------------------------------------------------------
+Place Details API:
+*We need place_id from place search api
+https://maps.googleapis.com/maps/api/place/details/json?
+key=${YOUR_API_KEY}
+&place_id=${PLACE_ID}
+&fields=vicinity,name,photo,place_id,url,formatted_phone_number,opening_hours,website,price_level,rating,review,user_ratings_total

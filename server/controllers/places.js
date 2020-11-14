@@ -33,7 +33,7 @@ const getPlaces = async (req, res, next) => {
         const resto = await newRestaurant.save();
       }
 
-      //res.json(JSON.parse(body)); TBD
+      res.json(parsedJSON); 
     });
   } catch (err) {
     console.error(err.message);
@@ -41,6 +41,9 @@ const getPlaces = async (req, res, next) => {
   }
 };
 
-const getPlaceDetails = async (req, res, next) => {};
+//Get Restaurant Details for 1 Specific place
+const getPlaceDetails = async (req, res, next) => {
+  
+};
 
 module.exports = { getPlaceDetails, getPlaces };
