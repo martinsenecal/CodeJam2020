@@ -11,19 +11,13 @@ const {
 
 const placesRouter = express.Router();
 
-// @route    Get api/session
-// @desc     Get details of a restaurant
-// @access   Public
+//Get Details of a specific restaurant
 placesRouter.get('/getDetailsRestaurant/:id', getPlaceDetails);
 
-// @route    Get api/session
-// @desc     Get list of restaurants
-// @access   Public
+//Get List of Restaurants with a query
 placesRouter.get('/getListRestaurant', getPlaces);
 
-// @route    Get api/session
-// @desc     Get Picture of Maps
-// @access   Public
+//Get API Picture
 placesRouter.get('/getPictureMaps/:id', getPlacePicture);
 
 module.exports = placesRouter;
