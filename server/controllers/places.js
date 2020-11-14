@@ -102,4 +102,37 @@ const getPlaceDetails = async (req, res, next) => {
   }
 };
 
-module.exports = { getPlaceDetails, getPlaces };
+//Get Picture from Places
+const getPlacePicture = async (req, res, next) => {
+ 
+  try {
+    const options = {
+      uri: `todo`,
+      method: 'GET',
+      headers: { 'user-agent': 'node.js' },
+    };
+
+    request(options, (error, response, body) => {
+      if (error) console.error(error);
+      if (response.statusCode != 200) {
+        return res.status(404).json({ msg: 'Problem with the request' });
+      }
+
+      //Body will be the picture that is being returned
+    
+
+      //Parse JSON into DB for Restaurants
+
+     
+
+      const restoMainData=parsedJSON.results;
+      
+      res.json(parsedJSON); 
+    });
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).json({ msg: 'Server Error' });
+  }
+};
+
+module.exports = { getPlaceDetails, getPlaces, getPlacePicture };
