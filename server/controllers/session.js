@@ -41,13 +41,11 @@ const postSession = async (req, res, next) => {
     //  Logic
     //  Step 1: Fetch places from PLACES SEARCH GOOGLE API
     const restaurants = await getPlaces(price, radius, { lat, lng }, foodType);
-
     if (!restaurants.success) {
       return res
         .status(500)
         .json({ success: false, message: "Error getting restaurants" });
     }
-
     //  Step 2: Store step 2 into Session.Restaurants
     //  Step 3: Create session in DB
     const session = await new Session({
