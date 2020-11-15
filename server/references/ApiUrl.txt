@@ -25,3 +25,12 @@ https://maps.googleapis.com/maps/api/place/photo?
 maxwidth=446
 &photoreference=${PHOTO_REFERENCE}
 &key=${YOUR_API_KEY}
+
+
+https://maps.googleapis.com/maps/api/place/textsearch/json?
+location=45.5367978,-73.8981158
+&radius=1000
+&type=restaurant
+&keyword=""
+&maxprice=4
+&key=AIzaSyA2g_rY_pvC4vfGFnzTS-kgf3gWO73Feso
