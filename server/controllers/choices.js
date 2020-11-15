@@ -7,7 +7,7 @@ require("express-async-errors");
 const getChoice = async (req, res, next) => {
   //  Variables
   try {
-    const { sessionId, userId } = req.params;
+    const { sessionId, userId } = req.query;
     let restaurantToSend; // restaurant to send
     //  Logic
     //  Step 1: GET user restaurants and session restaurants
@@ -46,7 +46,6 @@ const getChoice = async (req, res, next) => {
     }
     //    Get places details and send it back
     const placeDetails = await getPlaceDetails(restaurantToSend);
-
     if (!placeDetails.success) {
       return res.status(400).json({
         success: false,

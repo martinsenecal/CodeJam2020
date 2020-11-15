@@ -47,12 +47,12 @@ const getPlaces = async (
 const getPlaceDetails = async (place_id) => {
   try {
     const options = {
-      url: "https://maps.googleapis.com/maps/api/place/textsearch/json",
+      url: "https://maps.googleapis.com/maps/api/place/details/json",
       method: "GET",
       params: {
         place_id,
         key: config.GOOGLE_API_KEY,
-        field:
+        fields:
           "vicinity,name,photo,place_id,url,formatted_phone_number,opening_hours,website,price_level,rating,review,user_ratings_total",
       },
     };
@@ -61,7 +61,6 @@ const getPlaceDetails = async (place_id) => {
     if (response.status != 200) {
       return { success: false, message: response.data.error_message };
     }
-
     const data = response.data.result;
 
     const mongoPlace = await Restaurant.findOne({ place_id: data.place_id });
