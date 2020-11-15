@@ -2,6 +2,7 @@ require("express-async-errors");
 const request = require("request");
 const config = require("../config/config");
 const axios = require("axios");
+const Restaurant = require("../models/Restaurant");
 
 //Google Maps API -> to be used with
 const getPlaces = async (
@@ -41,65 +42,69 @@ const getPlaces = async (
     return { success: false, message: "Problem with the request" };
   }
 };
-
+//maps.googleapis.com/maps/api/place/details/json?
 //Get Restaurant Details for 1 Specific place
 const getPlaceDetails = async (place_id) => {
-  /*
-  To Do: Figure out Reviews and how to map it to the DB
-         Add API call
-         Pass ID 
-  */
   try {
     const options = {
-      uri: `todo`,
+      url: "https://maps.googleapis.com/maps/api/place/textsearch/json",
       method: "GET",
-      headers: { "user-agent": "node.js" },
+      params: {
+        place_id,
+        key: config.GOOGLE_API_KEY,
+        field:
+          "vicinity,name,photo,place_id,url,formatted_phone_number,opening_hours,website,price_level,rating,review,user_ratings_total",
+      },
     };
 
-    request(options, async (error, response, body) => {
-      if (error) console.error(error);
-      if (response.statusCode != 200) {
-        return res.status(404).json({ msg: "Problem with the request" });
-      }
+    const response = await axios(options);
+    if (response.status != 200) {
+      return { success: false, message: response.data.error_message };
+    }
 
-      //Body will be the JSON containing all the data
-      const parsedJSON = JSON.parse(body);
+    const data = response.data.result;
 
-      //Parse JSON into DB for Restaurants
+    const mongoPlace = await Restaurant.findOne({ place_id: data.place_id });
 
-      var reviewsArr = [];
-      for (obj in parsedJSON.results.reviews) {
-        let tempObject = {
-          author: obj.author_name,
-          relative_time_description: obj.relative_time_description,
-          text: obj.text,
-        };
-        reviewsArr.push(tempObject);
-      }
+    if (mongoPlace) {
+      return {
+        success: true,
+        message: "Place received successfully",
+        restaurant: mongoPlace,
+      };
+    }
 
-      const restoMainData = parsedJSON.results;
+    const reviews = data.reviews.map((review) => ({
+      author: review.author_name,
+      rating: review.rating,
+      text: review.text,
+    }));
 
-      const restoDetails = new Restaurant({
-        place_id: restoMainData.place_id,
-        company: restoMainData.name,
-        photos: restoMainData.photos, //To Be Determined
-        opening_hours: restoMainData.opening_hours.open_now,
-        website_link: restoMainData.website,
-        price_level: restoMainData.price_level,
-        rating: restoMainData.rating,
-        reviews: reviewsArr,
-        url: restoMainData.url,
-        vicinity: restoMainData.vicinity,
-        phone_number: restoMainData.formatted_phone_number,
-      });
+    const photos = data.photos
+      .map((photo) => photo.photo_reference)
+      .splice(0, 3);
 
-      const restoMongo = await restoDetails.save();
+    const restaurant = {
+      place_id: data.place_id,
+      company: data.name,
+      photos,
+      openedNow: data.opening_hours.open_now,
+      website_link: data.website,
+      price_level: data.price_level,
+      rating: data.rating,
+      reviews,
+      url: data.url,
+      vicinity: data.vicinity,
+      phone_number: data.formatted_phone_number,
+    };
 
-      res.json(parsedJSON);
-    });
+    return {
+      success: true,
+      message: "Place received successfully",
+      restaurant,
+    };
   } catch (err) {
     console.error(err.message);
-    return res.status(500).json({ msg: "Server Error" });
   }
 };
 

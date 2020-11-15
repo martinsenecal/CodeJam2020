@@ -8,7 +8,7 @@ const RestaurantSchema = new mongoose.Schema({
     type: String,
   },
   photos: {
-    //Up to 10 photos // TBD
+    //Up to 3 photos // TBD
     type: [String],
   },
   openedNow: {
@@ -28,8 +28,8 @@ const RestaurantSchema = new mongoose.Schema({
       author: {
         type: String,
       },
-      relative_time_description: {
-        type: String,
+      rating: {
+        type: Number,
       },
       text: {
         type: String,
