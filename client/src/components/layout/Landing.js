@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 function MyVerticallyCenteredModal(props) {
-  const logShit = () => {
+  const logBug = () => {
     console.log('it worked');
   };
 
@@ -37,10 +37,10 @@ function MyVerticallyCenteredModal(props) {
               <h6>Price:</h6>
             </div>
             <div class="d-flex justify-content-around align-items-center">
-              <button onClick={logShit()}>$</button>
-              <button onClick={logShit()}>$$</button>
-              <button onClick={logShit()}>$$$</button>
-              <button onClick={logShit()}>$$$$</button>
+              <button onClick={logBug()}>$</button>
+              <button onClick={logBug()}>$$</button>
+              <button onClick={logBug()}>$$$</button>
+              <button onClick={logBug()}>$$$$</button>
             </div>
           </div>
           <div class="mb-5">
@@ -282,7 +282,7 @@ const Landing = () => {
                 variant="primary"
                 onClick={() => setModalShow(true)}
               >
-                Launch vertically centered modal
+                Create a room
               </Button>
 
               <MyVerticallyCenteredModal
