@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import './Landing.css';
 import './Match.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 const App = () => {
   return (

@@ -162,12 +162,15 @@ q {
 }
 .card-title{
   color:  #3e4440 !important;
+  float: left;
 }
 .card-link{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top:45px;
 }
 .checked {
   color: rgb(240, 184, 0);
