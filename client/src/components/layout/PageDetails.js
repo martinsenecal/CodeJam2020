@@ -1,4 +1,6 @@
 import React from 'react';
+import $ from "jquery";
+import Carousel from 'react-bootstrap/Carousel'
 
 const PageDetails = () => {
   return (
@@ -14,7 +16,7 @@ const PageDetails = () => {
               id="rejectBtn"
             >
               <img
-                src="../img/cancel.png"
+                src="../../img/cancel.png"
                 alt=""
                 id="cancelIcon"
                 className="icon"
@@ -23,6 +25,29 @@ const PageDetails = () => {
           </div>
           <div id="cardDiv">
             <div className="card mx-2 restaurant shadow" style={{width: '28rem'}}>
+            <Carousel>
+  <Carousel.Item interval={1000}>
+    <img
+      className="d-block w-100"
+      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/asian-food-illustration-2.png"
+      alt="First slide"
+    />
+  </Carousel.Item>
+  <Carousel.Item interval={500}>
+    <img
+      className="d-block w-100"
+      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/asian-food-illustration-2.png"
+      alt="Third slide"
+    />
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/asian-food-illustration-2.png"
+      alt="Third slide"
+    />
+  </Carousel.Item>
+</Carousel>
               <div className="card-body cardBody">
                 <h5 className="card-title">McDonald's</h5>
                 <h5 className="card-price">$$</h5>

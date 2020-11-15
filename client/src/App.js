@@ -11,6 +11,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import './Landing.css';
+import './Match.css';
 
 const App = () => {
   return (
