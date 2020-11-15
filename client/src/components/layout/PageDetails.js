@@ -22,7 +22,7 @@ const PageDetails = () => {
             </button>
           </div>
           <div id="cardDiv">
-            <div className="card mx-2 restaurant shadow" style="width: 28rem;">
+            <div className="card mx-2 restaurant shadow" style={{width: '28rem'}}>
               <div className="card-body cardBody">
                 <h5 className="card-title">McDonald's</h5>
                 <h5 className="card-price">$$</h5>
@@ -69,6 +69,10 @@ const PageDetails = () => {
           </div>
         </div>
       </div>
+       {/* <!-- JS Imports--> */}
+       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </div>
   );
 };
