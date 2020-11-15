@@ -9,9 +9,9 @@ const SessionSchema = new mongoose.Schema({
   isMatched: {
     type: Boolean,
   },
-  latitude: {},
-  longitude: {},
-  locationRadius: {},
+  latitude: { type: Number },
+  longitude: { type: Number },
+  locationRadius: { type: Number },
   price: { type: Number },
   matchedRestaurant: { Boolean },
   users: {}, //where each users will have a list of accepted & declined restaurants
