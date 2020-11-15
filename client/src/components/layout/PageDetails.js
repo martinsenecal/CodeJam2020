@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import cancel from '../../img/cancel.png';
 import tick from '../../img/tick.png';
@@ -84,7 +85,9 @@ const PageDetails = () => {
               className="btn btn-primary chooseBtn hvr-bob shadow"
               id="acceptBtn"
             >
-              <img src={tick} alt="" id="tickIcon" className="icon"></img>
+              <Link to="/results">
+                <img src={tick} alt="" id="tickIcon" className="icon"></img>
+              </Link>
             </button>
           </div>
         </div>
