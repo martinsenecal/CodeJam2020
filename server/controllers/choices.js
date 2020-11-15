@@ -15,17 +15,25 @@ const getChoice = async (req, res, next) => {
     const sessionRestaurants = session.restaurants.map(
       (resto) => resto.place_id
     );
-    if (session.users[userId]) {
-      const userAccRestaurants = session.users[userId].acceptedRestaurants.map(
+
+    let user = -1;
+    for (let i = 0; i < session.users.length && user === -1; i++) {
+      if (session.users[i].userId === userId) {
+        user = i;
+      }
+    }
+
+    if (user !== -1) {
+      const userAccRestaurants = session.users[user].acceptedRestaurants.map(
         (resto) => resto.place_id
       );
-      const userDecRestaurants = session.users[userId].declinedRestaurants.map(
+      const userDecRestaurants = session.users[user].declinedRestaurants.map(
         (resto) => resto.place_id
       );
       const filteredRestaurants = sessionRestaurants.filter(
         (resto) =>
-          !userAccRestaurants.contains(resto.place_id) ||
-          !userDecRestaurants.contains(resto.place_id)
+          !userAccRestaurants.includes(resto) &&
+          !userDecRestaurants.includes(resto)
       );
       if (filteredRestaurants.length == 0) {
         return res.status(200).json({
