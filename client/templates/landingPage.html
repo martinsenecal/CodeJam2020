@@ -1,0 +1,197 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hungies</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="stylesheetLanding.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+      <!-- Create Room Modal -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Start Food Hunting</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <!-- Copy ID button-->
+            <div class = "d-flex justify-content-center">
+              <button type="button" class="btn btn-primary"> Copy Room ID to Clipboard </button>
+            </div>
+              <!-- Filters -->
+            <hr> <!--Lmao-->
+            <h5>Search Filters:</h5>
+            <div id ="filters">
+              <div class="mb-3">
+                <div class = "range-heading">
+                  <h6>Price:</h6>
+                </div>
+                <div class="range-wrap-price range-wrap">
+                  <input type="range" class="range-price range" min="1" max="4">
+                  <output class="bubble-price bubble ml-1"></output>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div class="range-heading">
+                  <h6>Distance:</h6>
+                </div>
+                <div class="range-wrap-km range-wrap">
+                  <input type="range" class="range-km range" min="0" max="10">
+                  <output class="bubble-km bubble ml-1"></output>
+                </div>
+              </div>
+              <div class="mb-5">
+                <div class="range-heading">
+                  <h6>Cuisine:</h6>
+                </div>
+                <div class="dropdown d-flex justify-content-center">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Select Cuisine
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Let's Hunt!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Join Room Modal-->
+    <div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Start Food Hunting</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Copy ID button-->
+            <div class="justify-content-between">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Enter a room ID</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ROOM112">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Let's Hunt!</button>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Landing Page Markup Starts Here-->
+    <div class="d-flex" id="landingPage">
+      <div id="backgroundchange">
+        <div class="backgroundimg" id="back1"></div>
+        <div class="backgroundimg" id="back2"></div>
+        <div class="backgroundimg" id="back3"></div>
+        <div class="backgroundimg" id="back4"></div>
+      </div>
+      <div id="titleDiv" class="p-3 mb-5 rounded d-flex justify-content-center align-items-center flex-column">
+          <h1 id="title">Dinner Plans?</h1>
+      </div>
+      <div id="buttonContainer" class="shadow-lg p-3 mb-5 rounded d-flex justify-content-center align-items-center flex-column">
+        <button type="button" class="btn btn-primary landingBtn grow" id="create" data-toggle="modal" data-target="#createModal">
+          <span class="buttonText">Create Challenge</span>
+        </button>
+        <button type="button" class="btn btn-primary landingBtn grow" id="join" data-toggle="modal" data-target="#joinModal">
+          <span class="buttonText">Join Room</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- JS Imports-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- JS Functions-->
+    <script>
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').trigger('focus')
+    })
+
+    //  slider price
+    const allRanges = document.querySelectorAll(".range-wrap-price");
+    allRanges.forEach(wrap => {
+      const range = wrap.querySelector(".range-price");
+      const bubble = wrap.querySelector(".bubble-price");
+
+      range.addEventListener("input", () => {
+        setBubble(range, bubble);
+      });
+      setBubble(range, bubble);
+    });
+
+    function setBubble(range, bubble) {
+      const val = range.value;
+      const min = range.min ? range.min : 0;
+      const max = range.max ? range.max : 100;
+      const newVal = Number(((val - min) * 100) / (max - min));
+      var priceVal = val;
+      console.log(typeof(val));
+      bubble.innerHTML = val;
+      if(val === '1'){
+        bubble.innerHTML = "$"
+      }else if(val === '2'){
+        bubble.innerHTML = "$$"
+      }else if(val === '3'){
+        bubble.innerHTML = "$$$"
+      }else if(val === '4'){
+        bubble.innerHTML = "$$$$"
+      }
+
+    }
+
+
+      //  slider price
+    const allRangesKm = document.querySelectorAll(".range-wrap-km");
+    allRangesKm.forEach(wrap => {
+      const rangeKm = wrap.querySelector(".range-km");
+      const bubbleKm = wrap.querySelector(".bubble-km");
+
+      rangeKm.addEventListener("input", () => {
+        setBubbleKm(rangeKm, bubbleKm);
+      });
+      setBubbleKm(rangeKm, bubbleKm);
+    });
+
+    function setBubbleKm(range, bubble) {
+      const val = range.value;
+      const min = range.min ? range.min : 0;
+      const max = range.max ? range.max : 100;
+      const newVal = Number(((val - min) * 100) / (max - min));
+      var priceVal = val;
+      console.log(typeof(val));
+      bubble.innerHTML = val;
+      bubble.innerHTML = val + 'km';
+
+
+
+    }
+    </script>
+  </body>
+</html>
