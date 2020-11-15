@@ -6,7 +6,7 @@ require("express-async-errors");
 const getSession = async (req, res, next) => {
   try {
     //  Variables
-    const sessionID = req.params.id;
+    const sessionId = req.params.id;
     //  Logic
     //  Step 1: Check DB for session
     const session = await Session.findOne({ sessionId });
@@ -14,14 +14,14 @@ const getSession = async (req, res, next) => {
     if (session) {
       return res.status(200).json({
         success: true,
-        message: `${sessionID} has been found.`,
+        message: `${sessionId} has been found.`,
         session,
       });
     } else {
       //  Step 3: If no session then return no session
       return res.status(404).json({
         success: false,
-        message: `${sessionID} has not been found.`,
+        message: `${sessionId} has not been found.`,
       });
     }
   } catch (err) {
@@ -41,6 +41,13 @@ const postSession = async (req, res, next) => {
     //  Logic
     //  Step 1: Fetch places from PLACES SEARCH GOOGLE API
     const restaurants = await getPlaces(price, radius, { lat, lng }, foodType);
+
+    if (!restaurants.success) {
+      return res
+        .status(500)
+        .json({ success: false, message: "Error getting restaurants" });
+    }
+
     //  Step 2: Store step 2 into Session.Restaurants
     //  Step 3: Create session in DB
     const session = await new Session({
@@ -50,7 +57,7 @@ const postSession = async (req, res, next) => {
       longitude: lng,
       locationRadius: radius,
       price,
-      restaurants,
+      restaurants: restaurants.restaurants,
     }).save();
     //  Step 4: Return data to user
     if (session) {

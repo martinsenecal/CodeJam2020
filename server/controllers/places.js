@@ -36,6 +36,7 @@ const getPlaces = async (
       const restaurants = parsedJSON.results.map((restaurant) => ({
         place_id: restaurant.place_id,
       }));
+
       console.log(restaurants);
       return {
         success: true,
