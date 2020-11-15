@@ -1,4 +1,5 @@
 const Session = require("../models/Session");
+const { getPlaces } = require("./places");
 require("express-async-errors");
 
 const getSession = async (req, res, next) => {
@@ -24,7 +25,7 @@ const getSession = async (req, res, next) => {
     }
   } catch (err) {
     console.error(err);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: err.message,
     });
@@ -34,13 +35,41 @@ const getSession = async (req, res, next) => {
 const postSession = async (req, res, next) => {
   try {
     //  Variables
-    const { price, radius, foodType } = req.body;
+    const { sessionId, price, radius, foodType, lat, lng } = req.body;
     //  Logic
     //  Step 1: Fetch places from PLACES SEARCH GOOGLE API
+    const restaurants = await getPlaces(price, radius, { lat, lng }, foodType);
     //  Step 2: Store step 2 into Session.Restaurants
     //  Step 3: Create session in DB
+    const session = await new Session({
+      isMatched: false,
+      sessionId,
+      latitude: lat,
+      longitude: lng,
+      locationRadius: radius,
+      price,
+      restaurants,
+    }).save();
     //  Step 4: Return data to user
-  } catch (err) {}
+    if (session) {
+      return res.status(201).json({
+        success: true,
+        message: "Session created successfully.",
+        session,
+      });
+    } else {
+      return res.status(400).json({
+        success: false,
+        message: "Error creating session.",
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
 };
 
 module.exports = { getSession, postSession };
