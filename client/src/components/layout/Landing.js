@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../Landing.css';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';

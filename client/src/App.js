@@ -10,10 +10,10 @@ import Results from './components/layout/Results';
 // Styling Imports
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import './Landing.css';
-import './Match.css';
-import './EndPage.css';
+import './style/App.css';
+import './style/Landing.css';
+import './style/Match.css';
+import './style/EndPage.css';
 
 const App = () => {
   return (
