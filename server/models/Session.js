@@ -28,6 +28,13 @@ const SessionSchema = new mongoose.Schema({
           },
         },
       ],
+      declinedRestaurants: [
+        {
+          place_id: {
+            type: String,
+          },
+        },
+      ],
     },
   ], //where each users will have a list of accepted & declined restaurants
   restaurants: [
