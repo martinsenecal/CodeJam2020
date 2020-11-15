@@ -91,7 +91,7 @@
 }
 
 .dropdown-toggle {
-  width: 75%;
+  width: 200px;
 }
 #exampleModalCenter {
   z-index: 1000 !important;
