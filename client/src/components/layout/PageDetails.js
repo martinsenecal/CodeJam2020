@@ -16,7 +16,7 @@ const PageDetails = () => {
               id="rejectBtn"
             >
               <img
-                src="../../img/cancel.png"
+                src="../../templates/cancel.png"
                 alt=""
                 id="cancelIcon"
                 className="icon"
@@ -27,25 +27,37 @@ const PageDetails = () => {
             <div className="card mx-2 restaurant shadow" style={{width: '28rem'}}>
             <Carousel>
   <Carousel.Item interval={1000}>
+    <div
+    className="cardImgDiv"
+    >
     <img
-      className="d-block w-100"
+      className="d-block w-100 cardImg"
       src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/asian-food-illustration-2.png"
       alt="First slide"
     />
+    </div>
   </Carousel.Item>
   <Carousel.Item interval={500}>
+  <div
+    className="cardImgDiv"
+    >
     <img
-      className="d-block w-100"
-      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/asian-food-illustration-2.png"
+      className="d-block w-100 cardImg"
+      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/mexican-food-illustration-tubikarts-2.png"
       alt="Third slide"
     />
+    </div>
   </Carousel.Item>
   <Carousel.Item>
+  <div
+    className="cardImgDiv"
+    >
     <img
-      className="d-block w-100"
-      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/asian-food-illustration-2.png"
+      className="d-block w-100 cardImg"
+      src="https://blog.tubikstudio.com/wp-content/uploads/2019/12/Italian-food-illustration-tubikarts-2.png"
       alt="Third slide"
     />
+    </div>
   </Carousel.Item>
 </Carousel>
               <div className="card-body cardBody">
