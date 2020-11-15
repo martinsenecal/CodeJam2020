@@ -1,17 +1,17 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const RestaurantSchema = new mongoose.Schema({
   place_id: {
-    type: String, //Unique ID
+    type: String, //Unique ID from Google
   },
   company: {
     type: String,
   },
   photos: {
-    //Up to 10 photos
+    //Up to 10 photos // TBD
     type: [String],
   },
-  opening_hours: {
+  openedNow: {
     type: Boolean,
   },
   website_link: {
@@ -47,4 +47,4 @@ const RestaurantSchema = new mongoose.Schema({
   },
 });
 
-module.exports = Restaurant = mongoose.model('restaurant', RestaurantSchema);
+module.exports = Restaurant = mongoose.model("restaurant", RestaurantSchema);
