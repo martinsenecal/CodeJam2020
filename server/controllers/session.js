@@ -2,6 +2,7 @@ const Session = require("../models/Session");
 const { getPlaces } = require("./places");
 require("express-async-errors");
 
+//  GET http://localhost:5000/api/session/:id
 const getSession = async (req, res, next) => {
   try {
     //  Variables
@@ -32,6 +33,7 @@ const getSession = async (req, res, next) => {
   }
 };
 
+//  POST http://localhost:5000/api/session/
 const postSession = async (req, res, next) => {
   try {
     //  Variables
