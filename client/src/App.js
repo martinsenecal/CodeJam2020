@@ -1,13 +1,33 @@
-import React from 'react';
-import './App.css';
-import Landing from './components/layout/Landing';
+//General Import
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
+//Import Components
+import Landing from './components/layout/Landing';
+import PageDetails from './components/layout/PageDetails';
+import Results from './components/layout/Results';
+
+// Styling Imports
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import './style/App.css';
+import './style/Landing.css';
+import './style/Match.css';
+import './style/EndPage.css';
+
+const App = () => {
   return (
-    <div className="App">
-      <Landing />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/pagedetails" component={PageDetails} />
+          <Route exact path="/results" component={Results} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
