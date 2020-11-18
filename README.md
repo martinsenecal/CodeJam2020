@@ -4,9 +4,11 @@
 ## What it does
 The application works somewhat like a dating app, letting two users swipe through our selection of restaurants until they both swipe right on a restaurant, at which point they've found a match! Users can create and join matching rooms to swipe through restaurants with their friends, and the restaurants displayed in these rooms can be filtered according to location, price, and cuisine.
 
-<img src="screensshot1.png">
-
-
+<img src="./utils/screenshots/landing.png">
+<img src="./utils/screenshots/create_room.png">
+<img src="./utils/screenshots/join_room.png">
+<img src="./utils/screenshots/details_page.png">
+<img src="./utils/screenshots/match_page.png">
 
 ## How we built it
 We used MongoDB, Express, and Node.js to build the backend and subsequent matching algorithm. The backend calls the google places API to fetch the restaurant info that will be displayed on the matching page. For the frontend, we first made static mockups using HTML, CSS, Bootstrap, and Vanilla Javascript, and then later ported these mockups over to React.
